@@ -1,0 +1,77 @@
+<form action="index.php" method = "post">
+enter your frist name :
+<input type="text" name = "fname" id = "fname"><br>
+
+enter second name :
+<input type="text" name = "lname" id = "lname"><br>
+<input type="submit">
+<!-- write comment
+<input type="text-area" name="" id=""> -->
+
+
+
+
+
+
+
+</form>
+
+
+
+<?php
+$servername = " https://aayatbilalahanger.github.io/ragistration/";
+$username = "aayatbilal08@gmail.com";
+$password = "aayat123#12";
+$dbname = "keybord";
+
+
+$conn = new mysqli($servername,$username,$password,$dbname);
+
+
+if($conn->connect_error)
+{
+
+die("connection fail");
+
+}
+
+$fname = $_POST['fname'];
+$lname = $_POST['lname'];
+
+
+$sql = "INSERT INTO `student` (`sno`, `fname`, `lane`) VALUES (NULL, '$fname', '$lname')";
+
+
+if($conn->query($sql)==true)
+{
+
+echo "new record added";
+
+}
+else{
+
+echo "error";
+
+}
+
+
+
+$conn->close();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+?>
