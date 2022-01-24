@@ -1,2 +1,0 @@
-# ragistration
-ragis
